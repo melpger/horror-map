@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Horror Map",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

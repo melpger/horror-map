@@ -1,0 +1,8 @@
+{
+  "name": "Horror Map",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a42c4b8e"
+}
