@@ -1,0 +1,67 @@
+<ion-content>
+  <div class="ion-text-center">
+    <h1>Login</h1>
+  </div>
+  <form (ngSubmit)="doLogin()" [formGroup]="formLogin" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input placeholder="Input Email" input-mode="email" type="email" autofocus formControlName="email"
+              required></ion-input>
+          </ion-item>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+            Email is required.
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.email">
+            Please input a valid email format.
+          </span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input placeholder="Input Password" type="password" type="password" clear-on-edit
+              formControlName="password" required></ion-input>
+          </ion-item>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+            Password is required.
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+            Password should be mininum 6 characters long.
+          </span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" type="submit" [disabled]="!formLogin.valid">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <br />
+  <div class="ion-text-center ion-text-uppercase">
+    <p>Or sign up using</p>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <ion-button type="button">
+          <ion-icon name="logo-facebook" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button type="button">
+          <ion-icon name="logo-google" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-button type="button">
+          <ion-icon name="logo-apple" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -5,6 +5,8 @@
 export const environment = {
   production: false
 };
+export const SERVER_URL = 'https://dev-api.aws-almex.com/mobweb/mob';
+
 
 /*
  * For easier debugging in development mode, you can import the following file
